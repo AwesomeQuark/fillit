@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:06:05 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/10 18:14:32 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/10 18:32:36 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,9 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdlib.h>
+
+
+char	***load_data(int argc, char **argv);
 
 #endif
