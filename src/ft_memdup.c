@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 18:06:05 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 12:49:02 by conoel           ###   ########.fr       */
+/*   Created: 2019/01/10 22:51:38 by conoel            #+#    #+#             */
+/*   Updated: 2019/01/11 13:24:36 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
+#include "../include/fillit.h"
 
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
+char	*ft_memdup(char *str, size_t size)
+{
+	char	*ret;
+	size_t	i;
 
-# include <stdio.h> // Pour le printf
-
-#define MAX_FILE 546
-
-char	***load_data(char *path);
-char	*fillit(char ***data);
-
-size_t		ft_strlen(char *s);
-char	*ft_memdup(char *str, size_t size);
-
-#endif
+	i = 0;
+	if (!(ret = malloc(sizeof(*ret) * size + 1)))
+		return (NULL);
+	while (size--)
+	{
+		ret[i] = str[i];
+		i++;
+	}
+	ret[i] = '\0';
+	return (ret);
+}

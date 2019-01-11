@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 18:06:05 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 12:49:02 by conoel           ###   ########.fr       */
+/*   Created: 2019/01/10 21:32:59 by conoel            #+#    #+#             */
+/*   Updated: 2019/01/10 21:44:14 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
+#include "../include/fillit.h"
 
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
+/*size_t		ft_strlen(char *s)
+{
+	char *s1;
 
-# include <stdio.h> // Pour le printf
+	s1 = s;
+	while (*s)
+		s++;
+	return(s - s1);
+}*/
 
-#define MAX_FILE 546
+size_t		ft_strlen(char *s)
+{
+	int	i;
 
-char	***load_data(char *path);
-char	*fillit(char ***data);
-
-size_t		ft_strlen(char *s);
-char	*ft_memdup(char *str, size_t size);
-
-#endif
+	i = 0;
+	while(*s++)
+		i++;
+	return(i);
+}
