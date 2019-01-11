@@ -1,54 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.c                                           :+:      :+:    :+:   */
+/*   ft_fillit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:06:01 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 18:55:24 by fguarrac         ###   ########.fr       */
+/*   Updated: 2019/01/11 19:25:17 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
-int		ft_test_pos(char *ret, int x, int y, char *tetri)
+static void		ft_merge()
+{
+
+}
+
+static void		ft_remove()
+{
+
+}
+
+static int		ft_test_pos(char *ret, int x, int y, char *tetri)
 {
 	int i;
 
 	i = 0;
-	while (tetri[i] != '.' && tetri[i] != '\n')
-		i++;
-	while ()
+
 }
 
-void		ft_track(**data[i], *ret, int nb_tetri)
+int				ft_track(char **data, char *ret, int size)
 {
 	int		i;
-	int		x;
-	int		y;
 
 	i = 0;
-	while (data[i] != NULL)
+	while (size)
 	{
-		x = 0;
-		while (x <= size_min) //position x
+		while (data[i] != NULL)
 		{
-			y = 0;
-			while (y <= size_min) //position y
+			if(ft_test_pos(ret, data[i], size) == 1)
 			{
-				if(ft_test_pos(&ret, x, y, &data[i][0]) == 1)
-				{
-					//placer
-					if (ft_track(**data[i + 1], *ret, int size_min) == 1) //place libre
-						break ;
-				}
-				//supprimer
-				y++;
+				ft_merge(ret, data[i]);
+				if (ft_track(data, ret, size) == 1)
+					return (1);
 			}
-			x++;
+			ft_remove(ret, i);
+			i++;
 		}
-		i++;
+		size++;
 	}
 }
 	
