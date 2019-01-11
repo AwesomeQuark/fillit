@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 18:55:57 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 20:13:27 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,22 @@ static char	**load_tetris(char *buffer)
 {
 	int		data_len;
 	char	**data;
-	int		i;
-	int		j;
+	t_index	ind;
 
 	data_len = (int)ft_strlen(buffer);
 	if (!(data = malloc(sizeof(*data) * (unsigned long)((data_len + 1) / 21
 ) + 1)))
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (i < data_len)
+	ind.i = 0;
+	ind.j = 0;
+	while (ind.i < data_len)
 	{
-		if (!(data[j] = ft_memdup(&buffer[i], 20)))
+		if (!(data[ind.j] = ft_memdup(&buffer[ind.i], 20)))
 			return (NULL);
-		data[j][20] = '\0';
-		j++;
-		i += 21;
+		ind.j++;
+		ind.i += 21;
 	}
-	data[j] = NULL;
+	data[ind.j] = NULL;
 	return (data);
 }
 
@@ -48,8 +46,7 @@ static char	**change_tetri(char **data)
 		j = 0;
 		while (data[i][j] != '\0')
 		{
-			if (data[i][j] != '\n')
-				data[i][j] = data[i][j] == '#' ? (char)i + 65 : '.';
+			data[i][j] = data[i][j] == '#' ? (char)i + 65 : '.';
 			j++;
 		}
 		i++;

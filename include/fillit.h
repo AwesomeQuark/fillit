@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:06:05 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 15:39:49 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 19:56:08 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,22 @@
 
 #define MAX_FILE 546
 
-char	***load_data(char *path);
-char	*fillit(char ***data);
-void	print_data(char ***data);
-void	ft_free(char ***data);
+typedef struct	s_index
+{
+	int		i;
+	int		j;
+	int		k;
+}				t_index;
+
+
+char	**load_data(char *path);
+void	print_data(char **data);
+void	ft_free(char **data);
+int		is_valid(char *buffer);
+
 
 size_t		ft_strlen(char *s);
 char	*ft_memdup(char *str, size_t size);
+void	ft_putstr(char *str);
 
 #endif

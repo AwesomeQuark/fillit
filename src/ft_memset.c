@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_data.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/11 15:32:32 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 20:13:51 by conoel           ###   ########.fr       */
+/*   Created: 2019/01/11 19:36:06 by conoel            #+#    #+#             */
+/*   Updated: 2019/01/11 19:37:15 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+# include "../include/fillit.h"
 
-void	print_data(char **data)
+void	ft_memset(char *s, size_t size, char c)
 {
-	int i;
-
-	i = 0;
-	while (data[i])
-	{
-		write(1, data[i++], 20);
-		write(1, "\n", 1);
-	}
+	while (size--)
+		*s++ = c;
+	s++;
+	*s = '\0';
 }

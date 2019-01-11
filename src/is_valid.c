@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:10:48 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 18:47:16 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 19:55:34 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_valid(char *buffer)
 {
-	t_index	ind;
+	t_index ind;
 	int		count;
 
 	ind.i = 0;

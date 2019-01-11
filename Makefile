@@ -6,7 +6,7 @@
 #    By: conoel <conoel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 21:14:13 by conoel            #+#    #+#              #
-#    Updated: 2019/01/11 15:39:36 by conoel           ###   ########.fr        #
+#    Updated: 2019/01/11 19:56:52 by conoel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME = fillit
 
 HEADER = include/fillit.h
 
-SRC_NAME = main.c load_data.c ft_memdup.c ft_strlen.c print_data.c ft_free.c
+SRC_NAME = ft_free.c ft_memdup.c ft_memset.c ft_putstr.c ft_strlen.c get_size.c\
+is_valid.c load_data.c main.c print_data.c
+
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -38,7 +40,7 @@ obj:
 	@echo "\n>========= * \033[35m\033[1mCreating obj dir\033[0m * =========<\n"
 
 ./obj/%.o: ./src/%.c
-	@clang -Wall -Werror -Wextra -c $< -o $@ 
+	@clang -c $< -o $@ 
 	@echo "\033[35mCompilating : $@\033[0m";
 
 re: fclean all
