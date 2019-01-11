@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:06:01 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 21:11:26 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 21:12:08 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static void		ft_merge(char *ret, char *tetri, int size, int pos)
 	j = 0;
 	while (ret[i])
 	{
-		if (i % size >= pos && i % size <= pos + 5 && tetri[j] != '.')
-			ret[i] == tetri[j];
-		i++;
+		//if (i % size >= pos && i % size <= pos + 5 && tetri[j] != '.')
+		//	ret[i] == tetri[j];
+		//i++;
 	}
 }
 
