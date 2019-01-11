@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:06:05 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 12:49:02 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 15:39:49 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 
 char	***load_data(char *path);
 char	*fillit(char ***data);
+void	print_data(char ***data);
+void	ft_free(char ***data);
 
 size_t		ft_strlen(char *s);
 char	*ft_memdup(char *str, size_t size);

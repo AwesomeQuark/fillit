@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 13:33:01 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 16:04:06 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ static char	***load_tetris(char *buffer)
 {
 	int		data_len;
 	char	***data;
-	int i;
-	int j;
-	int k;
+	int		i;
+	int		j;
+	int		k;
 
 
 	data_len = ft_strlen(buffer);
-	if (!(data = malloc(sizeof(*data) * (data_len / 21))))
+	if (!(data = malloc(sizeof(*data) * ((data_len + 1) / 21) + 1)))
 		return (NULL);
 	k = -1;
 	i = 0;
@@ -73,6 +73,28 @@ static char	***load_tetris(char *buffer)
 		}
 		i++;
 	}
+	data[k + 1] = NULL;
+	return (data);
+}
+
+static char	***change_tetri(char ***data)
+{
+	int i;
+	int j;
+	int k;
+
+	k = -1;
+	while (data[++k])
+	{
+		j = -1;
+		while (++j < 4)
+		{
+			i = -1;
+			while (++i < 4)
+				data[k][j][i] = data[k][j][i] == '#' ?  k + 65 : '.';
+			i++;
+		}
+	}
 	return (data);
 }
 
@@ -87,25 +109,15 @@ char		***load_data(char *path)
 	i = 0;
 	j = 0;
 	if ((fd = open(path, O_RDONLY)) < 0)
-	{
-		write(2, "Wrong path !\n", 13);
 		return (NULL);
-	}
 	buffer[read(fd, buffer, MAX_FILE)] = '\0';
 	if ((ft_strlen(buffer) % 20) - ((ft_strlen(buffer) / 20) - 1) != 0)
-	{
-		write(2, "Incorrect file size\n", 20);
 		return (NULL);
-	}
 	if (!is_valid(buffer))
-	{
-		write(2, "Wrong tetriminos formating\n", 27);
 		return (NULL);
-	}
 	if (!(data = load_tetris(buffer)))
-	{
-		write(2, "Failed to memory allocate\n", 26);
 		return (NULL);
-	}
+	data = change_tetri(data);
+	print_data(data);
 	return (data);
 }

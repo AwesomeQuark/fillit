@@ -6,7 +6,7 @@
 #    By: conoel <conoel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 21:14:13 by conoel            #+#    #+#              #
-#    Updated: 2019/01/11 13:31:45 by conoel           ###   ########.fr        #
+#    Updated: 2019/01/11 15:39:36 by conoel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fillit
 
 HEADER = include/fillit.h
 
-SRC_NAME = main.c load_data.c ft_memdup.c ft_strlen.c
+SRC_NAME = main.c load_data.c ft_memdup.c ft_strlen.c print_data.c ft_free.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
