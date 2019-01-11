@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 13:26:18 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 13:33:01 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	is_valid(char *buffer)
 	int i;
 	int j;
 	int k;
-	int count;
+	int count; //enregistre le nombre de "blocs" du tetrimino, si != 4 alors il est incorrect !
 
 	i = -1;
 	while (buffer[i + 1] != '\0')										// Tant que le fichier n'est pas fini
@@ -37,7 +37,7 @@ static int	is_valid(char *buffer)
 			if (buffer[++i] != '\n')									//s'il n'y a pas de retour a la ligne a la fin de ma ligne
 				return (0);
 		}
-		i++;															//s'il n'y a pas de retour a la ligne a la fin de mon tetrimino (on ne check pas si c'est le dernier tetri)
+		i++;															//s'il n'y a pas de retour a la ligne a la fin de mon tetrimino (on ne check si c'est le dernier tetri)
 		if ((buffer[i] != '\n' && buffer[i + 1] != '\0') || (buffer[i] == '\n' 
 && buffer[i + 1] == '\0') || count != 4)
 			return (0);

@@ -6,7 +6,7 @@
 #    By: conoel <conoel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 21:14:13 by conoel            #+#    #+#              #
-#    Updated: 2019/01/11 13:05:00 by conoel           ###   ########.fr        #
+#    Updated: 2019/01/11 13:31:45 by conoel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ obj:
 	@echo "\n>========= * \033[35m\033[1mCreating obj dir\033[0m * =========<\n"
 
 ./obj/%.o: ./src/%.c
-	@clang  -c $< -o $@  #pas oublier de remettre les flags
+	@clang -Wall -Werror -Wextra -c $< -o $@ 
 	@echo "\033[35mCompilating : $@\033[0m";
 
 re: fclean all
