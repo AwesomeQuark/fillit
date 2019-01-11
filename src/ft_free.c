@@ -6,13 +6,13 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 15:23:48 by fguarrac          #+#    #+#             */
-/*   Updated: 2019/01/11 15:58:20 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 17:36:17 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
-void	ft_free(char ***data)
+void	ft_free(char **data)
 {
 	int i;
 	int j;
@@ -21,11 +21,6 @@ void	ft_free(char ***data)
 	while (data[i] != NULL)
 	{
 		j = 0;
-		while (j < 4)
-		{
-			free(data[i][j]);
-			j++;
-		}
 		free(data[i]);
 		i++;
 	}

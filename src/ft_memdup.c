@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 22:51:38 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 13:24:36 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 16:35:18 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_memdup(char *str, size_t size)
 	size_t	i;
 
 	i = 0;
+	if (size == 0)
+		return (NULL);
 	if (!(ret = malloc(sizeof(*ret) * size + 1)))
 		return (NULL);
 	while (size--)

@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 21:32:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 15:17:44 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/11 18:02:59 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 size_t		ft_strlen(char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while(*s++)
+	if (s == NULL)
+		return (0);
+	while (*s++)
 		i++;
-	return(i);
+	return (i);
 }

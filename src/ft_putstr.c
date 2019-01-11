@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_data.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/11 15:32:32 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 18:06:54 by conoel           ###   ########.fr       */
+/*   Created: 2019/01/11 16:43:55 by conoel            #+#    #+#             */
+/*   Updated: 2019/01/11 16:51:32 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
-void	print_data(char **data)
+void	ft_putstr(char *str)
 {
-	int i;
-
-	i = 0;
-	while (data[i])
-		write(1, data[i++], 21);
+	write(1, str, ft_strlen(str));
+	return ;
 }

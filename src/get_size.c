@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_data.c                                       :+:      :+:    :+:   */
+/*   get_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/11 15:32:32 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 18:06:54 by conoel           ###   ########.fr       */
+/*   Created: 2019/01/11 18:27:58 by conoel            #+#    #+#             */
+/*   Updated: 2019/01/11 18:49:06 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
-void	print_data(char **data)
+static int	square(int nb)
 {
-	int i;
+	int		sqr;
 
-	i = 0;
-	while (data[i])
-		write(1, data[i++], 21);
+	sqr = 1;
+	while (nb > sqr * sqr)
+		sqr++;
+	return (sqr);
+}
+
+int			get_size(char **data)
+{
+	int		nb_tetri;
+	int		ret;
+
+	nb_tetri = 0;
+	while (data[nb_tetri] != NULL)
+		nb_tetri++;
+	ret = square(nb_tetri * 4);
+	return (ret > 4 ? 4 : ret);
 }
