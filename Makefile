@@ -6,7 +6,7 @@
 #    By: conoel <conoel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 21:14:13 by conoel            #+#    #+#              #
-#    Updated: 2019/01/12 14:24:07 by conoel           ###   ########.fr        #
+#    Updated: 2019/01/12 19:36:38 by conoel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ NAME = fillit
 HEADER = include/fillit.h
 
 SRC_NAME = ft_free.c ft_memdup.c ft_memset.c ft_putstr.c ft_strlen.c get_size.c\
-is_valid.c load_data.c main.c print_data.c ft_fillit.c
-
+is_valid.c load_data.c main.c print_data.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -31,9 +30,9 @@ OBJ = ${addprefix $(OBJDIR), $(OBJ_NAME)}
 
 all: $(NAME)
 
-$(NAME): obj $(OBJ)
-	@clang $(OBJ) -o $(NAME)
-	@echo "\n    /-------========= ~~ * ~~ =========-------\ \n-* |   \033[34m\033[1m$(NAME) binary created successfully !\033[0m   | *-\n    \-------========= ~~ * ~~ =========-------/\n"
+$(NAME): obj $(OBJ) ./obj/ft_fillit.o
+	@clang $(OBJ) ./obj/ft_fillit.o -o $(NAME)
+	@echo "\n    /-------========= ~~ * ~~ =========-------\ \n-* |    \033[34m\033[1m$(NAME) binary created successfully !\033[0m   | *-\n    \-------========= ~~ * ~~ =========-------/\n"
 
 obj:
 	@mkdir -p obj
@@ -52,3 +51,11 @@ fclean:
 	@rm -f $(NAME)
 	@rm -Rf $(OBJDIR)
 	@echo "               ~ --- ~\n*< \033[36mEverything has been removed.\033[0m >*\n               ~ --- ~"
+
+# |=============================|
+# |======== VISUAL MODE  =======|
+# |=============================|
+
+visual : obj $(OBJ) ./obj/ft_fillit_visual.o
+	@clang $(OBJ) ./obj/ft_fillit_visual.o -o $(NAME)
+	@echo "\n    /-------========= ~~ * ~~ =========-------\ \n-* |    \033[34m\033[1m$(NAME) VISUAL created successfully !\033[0m   | *-\n    \-------========= ~~ * ~~ =========-------/\n"
