@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 20:13:27 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/12 17:58:14 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,58 @@ static char	**load_tetris(char *buffer)
 	return (data);
 }
 
+static void		decal_horizontal(char *tetri)
+{
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (tetri[i] != '.')
+			break;
+		i++;
+	}
+	if (i == 4)
+	{
+		i = 0;
+		while (i < 5)
+		{
+			tetri[i] = tetri[i + 5];
+			tetri[i + 5] = tetri[i + 10];
+			tetri[i + 10] = tetri[i + 15];
+			tetri[i + 15] = '.';
+			i++;
+		}
+		decal_horizontal(tetri);
+	}
+}
+
+static void		decal_vertical(char *tetri)
+{
+	int i;
+
+	i = 0;
+	while (i < 20)
+	{
+		if (tetri[i] != '.')
+			break;
+		i += 5;
+	}
+	if (i == 20)
+	{
+		i = 0;
+		while (i < 20)
+		{
+			tetri[i] = tetri[i + 1];
+			tetri[i + 1] = tetri[i + 2];
+			tetri[i + 2] = tetri[i + 3];
+			tetri[i + 3] = '.';
+			i += 5;
+		}
+		decal_vertical(tetri);
+	}
+}
+
 static char	**change_tetri(char **data)
 {
 	int i;
@@ -46,9 +98,14 @@ static char	**change_tetri(char **data)
 		j = 0;
 		while (data[i][j] != '\0')
 		{
-			data[i][j] = data[i][j] == '#' ? (char)i + 65 : '.';
+			if (data[i][j] == '#')
+				data[i][j] = (char)i + 65;
+			if (data[i][j] == '\n')
+				data[i][j] = '.';
 			j++;
 		}
+		decal_horizontal(data[i]);
+		decal_vertical(data[i]);
 		i++;
 	}
 	return (data);
@@ -72,6 +129,5 @@ char		**load_data(char *path)
 	if (!(data = load_tetris(buffer)))
 		return (NULL);
 	data = change_tetri(data);
-	print_data(data);
 	return (data);
 }

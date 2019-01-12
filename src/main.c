@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:58 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/12 15:25:54 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/12 18:01:33 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int		main(int argc, char **argv)
 		write(1, "error\n", 6);
 		return (0);
 	}
-	//ft_putstr(fillit(data, nb_tetri(data)));
-	ft_fillit(data, 10/*get_size(data)*/);
+	ft_fillit(data, 6/*get_size(data)*/);
 	ft_free(data);
 	return (1);
 }

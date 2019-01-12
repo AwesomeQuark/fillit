@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:10:48 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 19:55:34 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/12 17:20:00 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	is_valid(char *buffer)
 			ind.k = 0;
 			while (ind.k++ < 4)
 			{
-				if (buffer[ind.i] != '*' && buffer[ind.i] != '#')
+				if (buffer[ind.i] != '.' && buffer[ind.i] != '#')
 					return (0);
 				buffer[ind.i++] == '#' ? count++ : 0;
 			}
