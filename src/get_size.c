@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:27:58 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/12 19:45:18 by fguarrac         ###   ########.fr       */
+/*   Updated: 2019/01/12 20:01:01 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,34 +24,53 @@ static int	square(int nb)
 
 int			first_check(char **data, int ret)
 {
+	int nb_tetri;
+	int count1;
+	int count2;
+	int i;
+
 	nb_tetri = 0;
 	while (data[nb_tetri] != NULL)
 	{
 		i = 0;
-		j = 0;
-		while (data[nb_tetri][i] != '\0' && data[nb_tetri[i] == '.'])
+		count1 = 0;
+		count2 = 0;
+		while (i < 5)
 		{
-			i++;
-			while (data[nb_tetri][i] != '.' && data[nb_tetri[i] != '\0'])
-				i++;
-			if (i > ret)
-				ret++;
-			i += 4;
 			if (data[nb_tetri][i] != '.')
-				j++;
+			{
+				count1++;
+			}
+			if (data[nb_tetri][i] == '.' && i != 0)
+				break;
+			i++;
 		}
-		if (j > ret)
-			ret++;
+		i = 0;
+		while (i < 21)
+		{
+			if (data[nb_tetri][i] != '.')
+			{
+				count2++;
+			}
+			if (data[nb_tetri][i] == '.' && i != 0)
+				break;
+			i += 5;
+		}
+		if (count1 > ret)
+			ret = count1;
+		if (count2 > ret)
+			ret = count2;
 		nb_tetri++;
 	}
 		return (ret);
 }
 
+/*
 int			sec_check(char **data, int ret)
 {
 	`
 	return (ret);
-}
+}*/
 
 int			get_size(char **data)
 {
@@ -65,6 +84,6 @@ int			get_size(char **data)
 		nb_tetri++;
 	ret = square(nb_tetri * 4);
 	ret = first_check(data, ret);
-	ret = sec_check(data, ret);
+	//ret = sec_check(data, ret);
 	return (ret);
 }
