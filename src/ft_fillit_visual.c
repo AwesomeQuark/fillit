@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fillit.c                                        :+:      :+:    :+:   */
+/*   ft_fillit_visual.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 18:06:01 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/12 19:37:04 by conoel           ###   ########.fr       */
+/*   Created: 2019/01/12 19:31:09 by conoel            #+#    #+#             */
+/*   Updated: 2019/01/12 19:38:51 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,9 @@ static int		ft_test_pos(char *ret, char *tetri, int size, int pos)
 
 int				ft_track(char **data, char *ret, int size, int tetri_i, int pos)
 {
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	ft_putstr(ret, size);
+	usleep(10000);
 	if (data[tetri_i] == NULL)
 		return (1);
 	if (pos >= size * size)
