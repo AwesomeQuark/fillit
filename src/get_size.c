@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:27:58 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/12 20:01:01 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 02:21:57 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,55 +22,49 @@ static int	square(int nb)
 	return (sqr);
 }
 
+static int	ft_count_char(int start, int condition, int decalage, char *tet)
+{
+	int i;
+	int count;
+
+	i = start;
+	count = 0;
+	while (i < condition)
+	{
+		if (tet[i] != '.')
+		{
+			count++;
+		}
+		if (tet[i] == '.' && i != 0)
+			break ;
+		i += decalage;
+	}
+	return (count);
+}
+
 int			first_check(char **data, int ret)
 {
 	int nb_tetri;
-	int count1;
-	int count2;
-	int i;
 
 	nb_tetri = 0;
 	while (data[nb_tetri] != NULL)
 	{
-		i = 0;
-		count1 = 0;
-		count2 = 0;
-		while (i < 5)
-		{
-			if (data[nb_tetri][i] != '.')
-			{
-				count1++;
-			}
-			if (data[nb_tetri][i] == '.' && i != 0)
-				break;
-			i++;
-		}
-		i = 0;
-		while (i < 21)
-		{
-			if (data[nb_tetri][i] != '.')
-			{
-				count2++;
-			}
-			if (data[nb_tetri][i] == '.' && i != 0)
-				break;
-			i += 5;
-		}
-		if (count1 > ret)
-			ret = count1;
-		if (count2 > ret)
-			ret = count2;
+		if (ft_count_char(0, 5, 1, data[nb_tetri]) > ret)
+			ret = ft_count_char(0, 5, 1, data[nb_tetri]);
+		if (ft_count_char(5, 10, 1, data[nb_tetri]) > ret)
+			ret = ft_count_char(5, 10, 1, data[nb_tetri]);
+		if (ft_count_char(10, 15, 1, data[nb_tetri]) > ret)
+			ret = ft_count_char(10, 15, 1, data[nb_tetri]);
+		if (ft_count_char(0, 21, 5, data[nb_tetri]) > ret)
+			ret = ft_count_char(0, 20, 5, data[nb_tetri]);
+		if (ft_count_char(1, 21, 5, data[nb_tetri]) > ret)
+			ret = ft_count_char(1, 20, 5, data[nb_tetri]);
+		if (ft_count_char(2, 21, 5, data[nb_tetri]) > ret)
+			ret = ft_count_char(2, 20, 5, data[nb_tetri]);
 		nb_tetri++;
 	}
-		return (ret);
-}
-
-/*
-int			sec_check(char **data, int ret)
-{
-	`
 	return (ret);
-}*/
+}
 
 int			get_size(char **data)
 {
@@ -84,6 +78,5 @@ int			get_size(char **data)
 		nb_tetri++;
 	ret = square(nb_tetri * 4);
 	ret = first_check(data, ret);
-	//ret = sec_check(data, ret);
 	return (ret);
 }

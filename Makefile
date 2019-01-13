@@ -6,7 +6,7 @@
 #    By: conoel <conoel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 21:14:13 by conoel            #+#    #+#              #
-#    Updated: 2019/01/12 19:36:38 by conoel           ###   ########.fr        #
+#    Updated: 2019/01/13 01:33:12 by conoel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,21 +35,20 @@ $(NAME): obj $(OBJ) ./obj/ft_fillit.o
 	@echo "\n    /-------========= ~~ * ~~ =========-------\ \n-* |    \033[34m\033[1m$(NAME) binary created successfully !\033[0m   | *-\n    \-------========= ~~ * ~~ =========-------/\n"
 
 obj:
-	@mkdir -p obj
+	@mkdir -p $(OBJDIR)
 	@echo "\n>========= * \033[35m\033[1mCreating obj dir\033[0m * =========<\n"
 
-./obj/%.o: ./src/%.c
+$(OBJDIR)%.o: $(SRCDIR)%.c
 	@clang -c $< -o $@ 
 	@echo "\033[35mCompilating : $@\033[0m";
 
 re: fclean all
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJDIR)
 
-fclean:
+fclean: clean
 	@rm -f $(NAME)
-	@rm -Rf $(OBJDIR)
 	@echo "               ~ --- ~\n*< \033[36mEverything has been removed.\033[0m >*\n               ~ --- ~"
 
 # |=============================|

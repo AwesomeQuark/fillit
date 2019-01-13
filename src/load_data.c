@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/12 17:58:14 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:28:41 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	**load_tetris(char *buffer)
 	return (data);
 }
 
-static void		decal_horizontal(char *tetri)
+static void	decal_horizontal(char *tetri)
 {
 	int i;
 
@@ -43,7 +43,7 @@ static void		decal_horizontal(char *tetri)
 	while (i < 4)
 	{
 		if (tetri[i] != '.')
-			break;
+			break ;
 		i++;
 	}
 	if (i == 4)
@@ -61,7 +61,7 @@ static void		decal_horizontal(char *tetri)
 	}
 }
 
-static void		decal_vertical(char *tetri)
+static void	decal_vertical(char *tetri)
 {
 	int i;
 
@@ -69,7 +69,7 @@ static void		decal_vertical(char *tetri)
 	while (i < 20)
 	{
 		if (tetri[i] != '.')
-			break;
+			break ;
 		i += 5;
 	}
 	if (i == 20)
@@ -122,7 +122,7 @@ char		**load_data(char *path)
 		return (NULL);
 	ret = read(fd, buffer, MAX_FILE + 1);
 	buffer[ret] = '\0';
-	if ((ft_strlen(buffer) % 20) - ((ft_strlen(buffer) / 20) - 1) != 0)
+	if (((ft_strlen(buffer) + 1) % 21) != 0)
 		return (NULL);
 	if (!is_valid(buffer))
 		return (NULL);
