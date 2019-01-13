@@ -6,11 +6,11 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 21:32:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 18:02:59 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:58:21 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 size_t		ft_strlen(char *s)
 {

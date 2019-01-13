@@ -6,11 +6,11 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 16:43:55 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 01:44:17 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:57:40 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 void	ft_putstr(char *str, int size)
 {

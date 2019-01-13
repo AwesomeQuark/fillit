@@ -6,11 +6,11 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 03:28:41 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:57:22 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 static char	**load_tetris(char *buffer)
 {

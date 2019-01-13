@@ -6,13 +6,13 @@
 #    By: conoel <conoel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 21:14:13 by conoel            #+#    #+#              #
-#    Updated: 2019/01/13 01:33:12 by conoel           ###   ########.fr        #
+#    Updated: 2019/01/13 03:56:53 by conoel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
-HEADER = include/fillit.h
+HEADER = src/fillit.h
 
 SRC_NAME = ft_free.c ft_memdup.c ft_memset.c ft_putstr.c ft_strlen.c get_size.c\
 is_valid.c load_data.c main.c print_data.c

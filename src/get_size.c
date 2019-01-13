@@ -6,11 +6,11 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:27:58 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 02:21:57 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:57:50 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 static int	square(int nb)
 {

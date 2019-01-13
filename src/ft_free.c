@@ -6,11 +6,11 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 15:23:48 by fguarrac          #+#    #+#             */
-/*   Updated: 2019/01/11 17:36:17 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:58:03 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 void	ft_free(char **data)
 {

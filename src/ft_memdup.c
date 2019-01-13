@@ -6,11 +6,11 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 22:51:38 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/11 20:12:45 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:58:08 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 char	*ft_memdup(char *str, size_t size)
 {

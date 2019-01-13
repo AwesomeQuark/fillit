@@ -6,11 +6,11 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:06:01 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 02:56:11 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:57:16 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 static void		ft_merge(char *ret, char *tetri, int size, int pos)
 {

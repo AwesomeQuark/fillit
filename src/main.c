@@ -6,11 +6,11 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:58 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/12 22:52:34 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 03:57:33 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 int		main(int argc, char **argv)
 {
