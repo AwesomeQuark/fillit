@@ -6,7 +6,7 @@
 #    By: conoel <conoel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 21:14:13 by conoel            #+#    #+#              #
-#    Updated: 2019/01/13 03:56:53 by conoel           ###   ########.fr        #
+#    Updated: 2019/01/13 16:30:25 by conoel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJ = ${addprefix $(OBJDIR), $(OBJ_NAME)}
 all: $(NAME)
 
 $(NAME): obj $(OBJ) ./obj/ft_fillit.o
-	@clang $(OBJ) ./obj/ft_fillit.o -o $(NAME)
+	@clang -Werror -Wextra -Wall $(OBJ) ./obj/ft_fillit.o -o $(NAME)
 	@echo "\n    /-------========= ~~ * ~~ =========-------\ \n-* |    \033[34m\033[1m$(NAME) binary created successfully !\033[0m   | *-\n    \-------========= ~~ * ~~ =========-------/\n"
 
 obj:
@@ -39,7 +39,7 @@ obj:
 	@echo "\n>========= * \033[35m\033[1mCreating obj dir\033[0m * =========<\n"
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
-	@clang -c $< -o $@ 
+	@clang -Wall -Werror -Wextra -c $< -o $@ 
 	@echo "\033[35mCompilating : $@\033[0m";
 
 re: fclean all

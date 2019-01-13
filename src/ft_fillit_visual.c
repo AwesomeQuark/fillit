@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fillit.c                                        :+:      :+:    :+:   */
+/*   ft_fillit_visual.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 18:06:01 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 17:46:08 by conoel           ###   ########.fr       */
+/*   Created: 2019/01/13 05:27:17 by conoel            #+#    #+#             */
+/*   Updated: 2019/01/13 06:04:05 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ static void		ft_remove(char *ret, int tetri_nb)
 
 int				ft_track(t_data arg, int size, int tetri_i, int pos)
 {
+	ft_putstr_visual(arg.ret, size);
+	usleep(20000);
 	if (arg.data[tetri_i] == NULL)
 		return (1);
 	if (pos >= size * size)
@@ -82,7 +84,7 @@ int				ft_track(t_data arg, int size, int tetri_i, int pos)
 
 void			ft_fillit(char **data, int size_min)
 {
-	char	ret[11 * 11 + 1];
+	char	ret[(size_min + 1) * (size_min + 1) + 1];
 	t_data	arguments;
 
 	arguments.data = data;

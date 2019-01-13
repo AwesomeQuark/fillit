@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:05:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 03:57:22 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 17:52:00 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,14 +114,16 @@ static char	**change_tetri(char **data)
 char		**load_data(char *path)
 {
 	char		**data;
-	char		buffer[MAX_FILE + 1];
+	char		buffer[MAX_FILE + 2];
 	int			fd;
 	ssize_t		ret;
 
 	if ((fd = open(path, O_RDONLY)) < 0)
 		return (NULL);
 	ret = read(fd, buffer, MAX_FILE + 1);
+	close(fd);
 	buffer[ret] = '\0';
+	buffer[ret + 1] = '\0';
 	if (((ft_strlen(buffer) + 1) % 21) != 0)
 		return (NULL);
 	if (!is_valid(buffer))

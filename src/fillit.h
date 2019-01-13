@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:06:05 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 01:57:35 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 17:51:34 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 # define MAX_FILE 546
 # define MAX_CHAR_PROMT 80

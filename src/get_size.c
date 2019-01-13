@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:27:58 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 03:57:50 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/13 16:33:44 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@ int			get_size(char **data)
 {
 	int		nb_tetri;
 	int		ret;
-	int		i;
-	int		j;
 
 	nb_tetri = 0;
 	while (data[nb_tetri] != NULL)
