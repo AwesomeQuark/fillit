@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 16:43:55 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 16:33:26 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/14 13:29:29 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,16 @@ static void	ft_putcolor(char *buff, char c)
 	else if (c % 6 == 5)
 		ft_strcat(buff, "\033[46m ");
 	i = ft_strlen(buff);
-	buff[i] =  c;
+	buff[i] = c;
 	buff[i + 1] = '\0';
 	ft_strcat(buff, " \033[0m");
 }
 
-void		ft_putstr_visual(char *str, int size)
+static void	ft_putbody(char *buff, char *str, int size)
 {
 	int i;
 	int j;
-	char buff[10000];
 
-	ft_memset(buff, 10000, '\0');
-	ft_puthead(buff, size);
 	i = -1;
 	while (++i < size)
 	{
@@ -95,17 +92,21 @@ void		ft_putstr_visual(char *str, int size)
 		}
 		ft_strcat(buff, "||\n");
 	}
+}
+
+void		ft_putstr_visual(char *str, int size)
+{
+	int		i;
+	char	buff[10000];
+
+	ft_memset(buff, 10000, '\0');
+	ft_puthead(buff, size);
 	i = 0;
+	ft_putbody(buff, str, size);
 	ft_strcat(buff, "        \\.-");
 	while (i++ < size)
 		ft_strcat(buff, "---");
 	ft_strcat(buff, "./\n");
 	write(1, buff, ft_strlen(buff));
 	return ;
-}
-
-void		ft_sleep(size_t time)
-{
-	while (time)
-		time = time - 1;
 }

@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 18:06:01 by conoel            #+#    #+#             */
-/*   Updated: 2019/01/13 17:46:08 by conoel           ###   ########.fr       */
+/*   Updated: 2019/01/14 13:22:07 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,8 @@ static int		ft_test_pos(char *ret, char *tetri, int size, int pos)
 		{
 			if (ret[(pos + (i % 5)) + (i / 5) * size] == '.' &&
 					(pos % size) + (i % 5) < size)
-			{				
-				count++;
-				if (count == 4)
+			{
+				if (++count == 4)
 					return (1);
 			}
 			else
@@ -71,7 +70,7 @@ int				ft_track(t_data arg, int size, int tetri_i, int pos)
 	if (pos >= size * size)
 		return (0);
 	if (arg.data[tetri_i] == NULL)
-                return (1);
+		return (1);
 	if (ft_test_pos(arg.ret, arg.data[tetri_i], size, pos))
 	{
 		ft_merge(arg.ret, arg.data[tetri_i], size, pos);
