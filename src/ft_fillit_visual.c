@@ -64,8 +64,6 @@ static void		ft_remove(char *ret, int tetri_nb)
 
 int				ft_track(t_data arg, int size, int tetri_i, int pos)
 {
-	ft_putstr_visual(arg.ret, size);
-	usleep(20000);
 	if (arg.data[tetri_i] == NULL)
 		return (1);
 	if (pos >= size * size)
@@ -73,9 +71,13 @@ int				ft_track(t_data arg, int size, int tetri_i, int pos)
 	if (ft_test_pos(arg.ret, arg.data[tetri_i], size, pos))
 	{
 		ft_merge(arg.ret, arg.data[tetri_i], size, pos);
+		ft_putstr_visual(arg.ret, size);
+		//ft_sleep(200000000);
 		if (ft_track(arg, size, tetri_i + 1, 0) == 1)
 			return (1);
 		ft_remove(arg.ret, tetri_i);
+		ft_putstr_visual(arg.ret, size);
+		//ft_sleep(200000000);
 	}
 	if (ft_track(arg, size, tetri_i, pos + 1) == 1)
 		return (1);

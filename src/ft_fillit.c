@@ -17,7 +17,7 @@ static void		ft_merge(char *ret, char *tetri, int size, int pos)
 	int i;
 
 	i = 0;
-	while (tetri[i])
+	while (i < 20)
 	{
 		if (tetri[i] != '.')
 		{
@@ -39,41 +39,45 @@ static int		ft_test_pos(char *ret, char *tetri, int size, int pos)
 		if (tetri[i] != '.')
 		{
 			if (ret[(pos + (i % 5)) + (i / 5) * size] == '.' &&
-(pos % size) + (i % 5) < size)
+					(pos % size) + (i % 5) < size)
+			{				
 				count++;
+				if (count == 4)
+					return (1);
+			}
 			else
 				return (0);
 		}
 		i++;
 	}
-	return (count == 4 ? 1 : 0);
+	return (0);
 }
 
-static void		ft_remove(char *ret, int tetri_nb)
+static void		ft_remove(char *ret, int tetri_nb, int pos)
 {
 	int i;
 
 	i = 0;
-	while (ret[i])
+	while (i < 20)
 	{
-		if (ret[i] == tetri_nb + 65)
-			ret[i] = '.';
+		if (ret[pos + i] == tetri_nb + 65)
+			ret[pos + i] = '.';
 		i++;
 	}
 }
 
 int				ft_track(t_data arg, int size, int tetri_i, int pos)
 {
-	if (arg.data[tetri_i] == NULL)
-		return (1);
 	if (pos >= size * size)
 		return (0);
+	if (arg.data[tetri_i] == NULL)
+                return (1);
 	if (ft_test_pos(arg.ret, arg.data[tetri_i], size, pos))
 	{
 		ft_merge(arg.ret, arg.data[tetri_i], size, pos);
 		if (ft_track(arg, size, tetri_i + 1, 0) == 1)
 			return (1);
-		ft_remove(arg.ret, tetri_i);
+		ft_remove(arg.ret, tetri_i, pos);
 	}
 	if (ft_track(arg, size, tetri_i, pos + 1) == 1)
 		return (1);

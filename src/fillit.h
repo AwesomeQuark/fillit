@@ -40,13 +40,15 @@ void			ft_fillit(char **data, int size_min);
 char			**load_data(char *path);
 void			print_data(char **data);
 void			ft_free(char **data);
-int				is_valid(char *buffer);
+int			is_valid(char *buffer);
+void			ft_sleep(size_t time);
+int                     get_size(char **data);
 
 size_t			ft_strlen(char *s);
 char			*ft_memdup(char *str, size_t size);
 void			ft_putstr(char *str, int size);
 void			ft_putstr_visual(char *str, int size);
 void			ft_memset(char *s, size_t size, char c);
-int				get_size(char **data);
+void			ft_strcat(char *s1, char *s2);
 
 #endif

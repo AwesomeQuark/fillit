@@ -15,7 +15,7 @@ NAME = fillit
 HEADER = src/fillit.h
 
 SRC_NAME = ft_free.c ft_memdup.c ft_memset.c ft_putstr.c ft_strlen.c get_size.c\
-is_valid.c load_data.c main.c print_data.c
+is_valid.c load_data.c main.c print_data.c ft_strcat.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -48,7 +48,7 @@ clean:
 	@rm -rf $(OBJDIR)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(NAME)_visual
 	@echo "               ~ --- ~\n*< \033[36mEverything has been removed.\033[0m >*\n               ~ --- ~"
 
 # |=============================|
@@ -56,5 +56,5 @@ fclean: clean
 # |=============================|
 
 visual : obj $(OBJ) ./obj/ft_fillit_visual.o
-	@clang $(OBJ) ./obj/ft_fillit_visual.o -o $(NAME)
+	@clang $(OBJ) ./obj/ft_fillit_visual.o -o $(NAME)_visual
 	@echo "\n    /-------========= ~~ * ~~ =========-------\ \n-* |    \033[34m\033[1m$(NAME) VISUAL created successfully !\033[0m   | *-\n    \-------========= ~~ * ~~ =========-------/\n"
